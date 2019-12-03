@@ -103,6 +103,11 @@ public class DroneGUI extends JLabel implements PropertyChangeListener {
     }
 
     private boolean droneIsInPanelBounds() {
-        return containingPanel.contains(new Point(this.drone.getLocProperty().getX(), this.drone.getLocProperty().getY()));
+       Boolean xBounds = this.drone.getLocProperty().getX() > 0 && 
+                (this.drone.getLocProperty().getX() +this.getWidth()) < this.containingPanel.getWidth();
+        Boolean yBounds = this.drone.getLocProperty().getY() > 0 && 
+                (this.drone.getLocProperty().getY() + this.getHeight()) < this.containingPanel.getHeight();
+        
+       return xBounds && yBounds;
     }
 }

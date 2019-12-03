@@ -53,7 +53,7 @@ public class Drone implements Serializable {
     public void takeOff(Coordinate initLoc){
         this.FLYING = true;
         LOC = initLoc;
-        timer.schedule(new SetLocationTimerTask(this), 1000, 1000);
+        timer.schedule(new SetLocationTimerTask(this), 100, 100);
         
     }
     
